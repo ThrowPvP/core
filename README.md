@@ -1,1 +1,1 @@
-Core for yo boi
+Private files for ThrowPvP Core (some things are public)
