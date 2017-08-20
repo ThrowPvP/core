@@ -1,0 +1,83 @@
+# THIS IS THE MAIN SKRIPT PART OF CORE! IGNORE THIS !
+
+command /setrank [<offline player>] [<text>]:
+	permission: rank.set
+	permission message: &3Core &7» &cSorry, no permissions.
+	trigger:
+		if arg-2 is not set:
+			send "&3Core &7» &6Core v. 1.2.6 by: Sleetla"
+			send "&c/setrank &7<player> <rank>"
+		if arg-2 is set:
+			execute console command "pex user %arg-1% group set %arg-2%"
+			send "&3Core &7» &aRank set."
+
+on command "/pex":
+		cancel event
+		send "&3Core &7» &cPlease use /setrank"
+
+on command "/permissionsex":
+		cancel event
+		send "&3Core &7» &cPlease use /setrank"
+
+
+on command "/manuadd":		
+             cancel event
+		send "&3Core &7» &cPlease use /setrank"
+
+command /throwcore:
+    permission: throw.core
+    permission message: &3Core &7» &6ThrowCore, Developed by Sleetla
+    aliases: /tc, /throwc, /tcore, /core
+    trigger:
+        send ""
+        send "&c       ThrowCore"
+        send ""
+        send "&8&l&m----------------------"
+        send "&3Permissions Manager:"
+        send ""
+        send "&6/setrank - &7Sets a users rank"
+        send "&6/addperm - &7Adds a permissions to a group."
+        send "&6/setprefix - &7Sets a group prefix"
+        send "&6/setsuffix - &7Sets a group suffix."
+        send ""
+        send "&3Staff Essentials:"
+        send ""
+        send "&6/staff - &7Enables Staff Mode"
+        send "&6/throwToggle - &7Toggles AntiCheat Alerts"
+        send "&6/throwXray- &7Toggles XRay Alerts"
+        send ""
+        send "&3Thanks for testing! PM Sleetla on any issues <3"
+        send ""
+
+command /addperm [<text>] [<text>]:
+	permission: rank.add
+	permission message: &3Core &7» &cSorry, no permissions.
+	trigger:
+		if arg-2 is not set:
+			send "&3Core &7» &6Core v. 1.2.6 by: Sleetla"
+			send "&c/addperm &7<group> <permission>"
+		if arg-2 is set:
+			execute console command "pex group %arg-1% add %arg-2%"
+			send "&3Core &7» &aPermission Added."
+
+command /setprefix [<text>] [<text>]:
+	permission: rank.prefix
+	permission message: &3Core &7» &cSorry, no permissions.
+	trigger:
+		if arg-2 is not set:
+			send "&3Core &7» &6Core v. 1.2.6 by: Sleetla"
+			send "&c/setprefix &7<group> <prefix>"
+		if arg-2 is set:
+			execute console command "pex group %arg-1% prefix %arg-2%"
+			send "&3Core &7» &aAdded Prefix"
+
+command /setsuffix [<text>] [<text>]:
+	permission: rank.suffix
+	permission message: &3Core &7» &cSorry, no permissions.
+	trigger:
+		if arg-2 is not set:
+			send "&3Core &7» &6Core v. 1.2.6 by: Sleetla"
+			send "&c/setsuffix &7<group> <suffix>"
+		if arg-2 is set:
+			execute console command "pex group %arg-1% suffix %arg-2%"
+			send "&3Core &7» &aAdded Suffix"
